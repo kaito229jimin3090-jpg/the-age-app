@@ -385,7 +385,7 @@ function ChatScreen({ context, onBack, addToHistory }) {
 
 // ---------- Root ----------
 export default function App() {
-  const [booting, setBooting] = useState(true);
+  const [booting, setBooting] = useState(false);
   const [tab, setTab] = useState("home");
   const [ages, setAges] = useState(AGES);
   const [storyIndex, setStoryIndex] = useState(0);
