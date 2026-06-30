@@ -370,15 +370,25 @@ function ChatScreen({ context, onBack, addToHistory }) {
         <div style={styles.attachIcon} />
         <span style={styles.attachLabel}>手書きページを添える</span>
       </div>
-      <div style={styles.inputRow}>
-        <input
-          style={styles.inputField}
-          placeholder="メッセージを送る"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => { if (e.key === "Enter") send(); }}
-        />
-      </div>
+      <div style={{ ...styles.inputRow, display: "flex", gap: 8 }}>
+  <input
+    style={{ ...styles.inputField, flex: 1 }}
+    placeholder="メッセージを送る"
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+    onKeyDown={(e) => { if (e.key === "Enter") send(); }}
+  />
+  <button
+    onClick={send}
+    style={{
+      width: 40, height: 40, borderRadius: "50%", border: "none",
+      background: OLIVE, color: "#fff", fontSize: 16, cursor: "pointer",
+      flexShrink: 0,
+    }}
+  >
+    →
+  </button>
+</div>
     </div>
   );
 }
